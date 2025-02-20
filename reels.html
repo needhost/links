@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Video Processor</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="https://assets.streamlinehq.com/image/private/w_24,h_24,ar_1/f_auto/v1/icons/core-gradient-free/images-photography/images-photography/film-roll-1-ell6y2crt9q52v9vbochl3.png"
+    />
+    <style>
+      body {
+        width: 100%;
+        padding: 10px;
+        margin: 0;
+        font-family: Arial, sans-serif;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      input[type='url'] {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      button {
+        padding: 8px 16px;
+        background-color: #4caf50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-sizing: border-box;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      #videoContainer {
+        margin-top: 10px;
+        width: 100%;
+        box-sizing: border-box;
+      }
+      video {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+      }
+      .spinner {
+        display: none;
+        width: 40px;
+        height: 40px;
+        margin: 10px auto;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #4caf50;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <input type="url" id="videoUrl" placeholder="Enter video URL" />
+    <button id="submitBtn">Process Video</button>
+    <div id="spinner" class="spinner"></div>
+    <div id="videoContainer"></div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const videoUrlInput = document.getElementById('videoUrl')
+        const submitBtn = document.getElementById('submitBtn')
+        const videoContainer = document.getElementById('videoContainer')
+        const spinner = document.getElementById('spinner')
+
+        submitBtn.addEventListener('click', async function () {
+          const url = videoUrlInput.value.trim()
+
+          if (!url) {
+            alert('Please enter a valid URL')
+            return
+          }
+
+          try {
+            // Показываем спиннер и блокируем кнопку
+            spinner.style.display = 'block'
+            submitBtn.disabled = true
+            videoContainer.innerHTML = ''
+
+            // Создаем видео элемент
+            videoContainer.innerHTML = `
+                        <video controls autoplay>
+                            <source src="http://localhost:61081" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    `
+
+            const videoElement = videoContainer.querySelector('video')
+
+            // Отправляем запрос на получение видео
+            const response = await fetch('http://localhost:61081', {
+              method: 'POST',
+              headers: {
+                'Content-Type': 'application/json',
+              },
+              body: JSON.stringify({ url: url }),
+            })
+
+            if (!response.ok) {
+              throw new Error('Network response was not ok')
+            }
+
+            // Создаем Blob из ответа
+            const blob = await response.blob()
+            const videoUrl = URL.createObjectURL(blob)
+
+            // Устанавливаем источник видео
+            videoElement.src = videoUrl
+
+            // Начинаем воспроизведение
+            videoElement
+              .play()
+              .catch(e => console.log('Автовоспроизведение не удалось:', e))
+
+
+            // Очищаем Blob URL после окончания воспроизведения
+            videoElement.onended = () => {
+              URL.revokeObjectURL(videoUrl)
+            }
+          } catch (error) {
+            console.error('Error:', error)
+            alert('Error processing video URL')
+            videoContainer.innerHTML = ''
+          } finally {
+            // Скрываем спиннер и разблокируем кнопку
+            spinner.style.display = 'none'
+            submitBtn.disabled = false
+          }
+        })
+      })
+    </script>
+  </body>
+</html>
+
