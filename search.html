@@ -1,6 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Получение буфера обмена</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <h1>Попытка получить содержимое буфера обмена</h1>
+  <p>Кликните в любое место на странице, чтобы попытаться получить содержимое буфера.</p>
+  <div id="output">Здесь будет отображено содержимое буфера.</div>
 
-<!DOCTYPE html><html><head>
-
-<link rel="icon" href="https://assets.streamlinehq.com/image/private/w_24,h_24,ar_1/f_auto/v1/icons/ui-actions/quick-search-u90jflq1c1lq6afexralf9.png/quick-search-akldydlwan5yn3vc6bokq.png" type="image/png">
-
-<meta http-equiv="refresh" content="3; URL=chrome-extension://lfabpmegaafagjhmcejmkmfikhppgdeo/sidepanel.html"></head></html>
+  <script>
+    document.addEventListener('click', async () => {
+      const output = document.getElementById('output');
+      try {
+        const text = await navigator.clipboard.readText();
+        output.textContent = text || 'Буфер пуст или не содержит текста.';
+      } catch (err) {
+        output.textContent = 'Ошибка доступа к буферу: ' + err.message;
+      }
+    });
+  </script>
+</body>
+</html>
