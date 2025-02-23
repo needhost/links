@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Получение буфера обмена</title>
+  <title>Чтение буфера при видимости страницы</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -18,18 +18,27 @@
   </style>
 </head>
 <body>
-  <h1>Попытка получить содержимое буфера обмена</h1>
-  <p>Кликните в любое место на странице, чтобы попытаться получить содержимое буфера.</p>
+  <h1>Чтение буфера при видимости страницы</h1>
+  <p>Переключитесь на другую вкладку и вернитесь, чтобы увидеть содержимое буфера.</p>
   <div id="output">Здесь будет отображено содержимое буфера.</div>
 
   <script>
-    document.addEventListener('click', async () => {
+    // Функция для чтения буфера обмена
+    async function readClipboard() {
       const output = document.getElementById('output');
       try {
         const text = await navigator.clipboard.readText();
         output.textContent = text || 'Буфер пуст или не содержит текста.';
       } catch (err) {
         output.textContent = 'Ошибка доступа к буферу: ' + err.message;
+      }
+    }
+
+    // Отслеживание изменения видимости страницы
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') {
+        // Страница стала видимой — читаем буфер
+        readClipboard();
       }
     });
   </script>
