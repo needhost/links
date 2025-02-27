@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Чтение буфера при нажатии кнопки</title>
+  <title>Чтение буфера при видимости страницы</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -21,18 +21,11 @@
       height: 500px;
       border: 1px solid #ddd;
     }
-    button {
-      padding: 10px 15px;
-      font-size: 16px;
-      margin-top: 10px;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
-  <h1>Чтение буфера обмена</h1>
-  <p>Нажмите на кнопку, чтобы прочитать буфер обмена и выполнить поиск в Google.</p>
-  <button id="read-button">Прочитать буфер обмена</button>
+  <h1>Чтение буфера при видимости страницы</h1>
+  <p>Переключитесь на другую вкладку и вернитесь, чтобы увидеть содержимое буфера.</p>
   <div id="output">Здесь будет отображено содержимое буфера.</div>
   
   <!-- iframe для поиска Google -->
@@ -56,19 +49,16 @@
       }
     }
 
-    // Обработчик нажатия на кнопку
-    document.getElementById('read-button').addEventListener('click', readClipboard);
-
-    // Можно также сохранить обработчик visibilitychange, но он может не сработать как ожидается
+    // Отслеживание изменения видимости страницы
     document.addEventListener('visibilitychange', () => {
       if (document.visibilityState === 'visible') {
-        // Попытка чтения буфера при возврате на страницу
-        // Обратите внимание, что это может не работать без взаимодействия пользователя
-        try {
+        // Страница стала видимой — добавляем задержку перед чтением буфера
+        output.textContent = 'Получаем содержимое буфера...';
+        
+        // Задержка в 100 мс перед чтением буфера (solve bug: Document is not focused")
+        setTimeout(() => {
           readClipboard();
-        } catch (err) {
-          console.log('Не удалось автоматически прочитать буфер: ', err);
-        }
+        }, 100);
       }
     });
   </script>
