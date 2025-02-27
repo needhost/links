@@ -25,38 +25,27 @@
 </head>
 <body>
   <h1>Чтение буфера при видимости страницы</h1>
-  <p>Переключитесь на другую вкладку и вернитесь, чтобы увидеть содержимое буфера и поиск в Google.</p>
+  <p>Переключитесь на другую вкладку и вернитесь, чтобы увидеть содержимое буфера.</p>
   <div id="output">Здесь будет отображено содержимое буфера.</div>
   
   <!-- iframe для поиска Google -->
-  <iframe id="search-frame" style="display: none;"></iframe>
+  <iframe id="search-frame"></iframe>
 
   <script>
     // Функция для чтения буфера обмена
     async function readClipboard() {
       const output = document.getElementById('output');
-      const searchFrame = document.getElementById('search-frame');
-      
       try {
         const text = await navigator.clipboard.readText();
+        output.textContent = text || 'Буфер пуст или не содержит текста.';
         
+        // Добавляем поиск в Google
         if (text) {
-          // Отображаем текст из буфера
-          output.textContent = text;
-          
-          // Формируем URL для поиска в Google
-          const searchUrl = `https://www.google.com/search?q=${encodeURIComponent(text)}`;
-          
-          // Отображаем iframe и загружаем поиск
-          searchFrame.style.display = 'block';
-          searchFrame.src = searchUrl;
-        } else {
-          output.textContent = 'Буфер пуст или не содержит текста.';
-          searchFrame.style.display = 'none';
+          const searchFrame = document.getElementById('search-frame');
+          searchFrame.src = `https://www.google.com/search?q=${encodeURIComponent(text)}`;
         }
       } catch (err) {
         output.textContent = 'Ошибка доступа к буферу: ' + err.message;
-        searchFrame.style.display = 'none';
       }
     }
 
