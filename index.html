@@ -56,26 +56,96 @@
             font-size: 24px;
             color: #333;
         }
+        .url-input-container {
+            display: flex;
+            margin: 0 auto 25px auto;
+            max-width: 300px;
+        }
+        .url-input {
+            flex-grow: 1;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px 0 0 8px;
+            font-size: 16px;
+            outline: none;
+        }
+        .url-input:focus {
+            border-color: #007bff;
+        }
+        .go-button {
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 0 8px 8px 0;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+        .go-button:hover {
+            background-color: #218838;
+        }
+        .link-section {
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Extension Links</h1>
-        <a href="chrome-extension://lfabpmegaafagjhmcejmkmfikhppgdeo/sidepanel.html" class="button">
-            <i class="fas fa-search"></i> SideSearch
-        </a>
-        <a href="chrome-extension://difoiogjjojoaoomphldepapgpbgkhkb/sidepanel.html" class="button">
-            <i class="fas fa-puzzle-piece"></i> Sider
-        </a>
-        <a href="chrome-extension://gldebcpkoojijledacjeboaehblhfbjg/sidepanel.html" class="button">
-            <i class="fas fa-comments"></i> AskSteve
-        </a>
-        <a href="chrome-extension://lilckelmopbcffmglfmfhelaajhjpcff/sidebar.html" class="button">
-            <i class="fas fa-robot"></i> Anything Copilot
-        </a>
-        <a href="chrome-extension://oiiajjjedfdfboacleknggbcbkjhngen/new-tab/index.html" class="button">
-            <i class="fas fa-layer-group"></i> Multi Search
-        </a>
+        
+        <!-- URL Input Form -->
+        <div class="url-input-container">
+            <input type="url" id="urlInput" class="url-input" placeholder="Enter URL..." autocomplete="off">
+            <button id="goButton" class="go-button">Go</button>
+        </div>
+        
+        <div class="link-section">
+            <a href="chrome-extension://lfabpmegaafagjhmcejmkmfikhppgdeo/sidepanel.html" class="button">
+                <i class="fas fa-search"></i> SideSearch
+            </a>
+            <a href="chrome-extension://difoiogjjojoaoomphldepapgpbgkhkb/sidepanel.html" class="button">
+                <i class="fas fa-puzzle-piece"></i> Sider
+            </a>
+            <a href="chrome-extension://gldebcpkoojijledacjeboaehblhfbjg/sidepanel.html" class="button">
+                <i class="fas fa-comments"></i> AskSteve
+            </a>
+            <a href="chrome-extension://lilckelmopbcffmglfmfhelaajhjpcff/sidebar.html" class="button">
+                <i class="fas fa-robot"></i> Anything Copilot
+            </a>
+            <a href="chrome-extension://oiiajjjedfdfboacleknggbcbkjhngen/new-tab/index.html" class="button">
+                <i class="fas fa-layer-group"></i> Multi Search
+            </a>
+        </div>
     </div>
+
+    <script>
+        // Function to navigate to URL
+        function navigateToUrl() {
+            let url = document.getElementById('urlInput').value.trim();
+            
+            // Add https:// if no protocol is specified
+            if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'https://' + url;
+            }
+            
+            // Navigate to URL if it's not empty
+            if (url) {
+                window.location.href = url;
+            }
+        }
+        
+        // Add click event to Go button
+        document.getElementById('goButton').addEventListener('click', navigateToUrl);
+        
+        // Add Enter key support for URL input
+        document.getElementById('urlInput').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                navigateToUrl();
+            }
+        });
+    </script>
 </body>
 </html>
