@@ -19,7 +19,7 @@
         }
         .container {
             text-align: center;
-            max-width: 600px;
+            max-width: 900px;
             width: 100%;
             padding: 20px;
             background-color: #fff;
@@ -29,37 +29,36 @@
         .button {
             display: flex;
             align-items: center;
-            justify-content: center;
-            margin: 15px;
-            padding: 15px 30px;
+            justify-content: flex-start;
+            padding: 16px 20px; /* Increased height */
             font-size: 16px;
             color: #fff;
-            background-color: #007bff;
             border: none;
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.3s ease, transform 0.2s ease;
             width: 100%;
-            max-width: 300px;
-            margin-left: auto;
-            margin-right: auto;
         }
-        .button:hover {
+        .left-button {
+            background-color: #28a745;
+        }
+        .left-button:hover {
+            background-color: #218838;
+        }
+        .right-button {
+            background-color: #007bff;
+        }
+        .right-button:hover {
             background-color: #0056b3;
         }
         .button i {
             margin-right: 10px;
             font-size: 18px;
         }
-        h1 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
         .url-input-container {
             display: flex;
             margin: 0 auto 25px auto;
-            max-width: 300px;
+            max-width: 400px;
         }
         .url-input {
             flex-grow: 1;
@@ -85,37 +84,66 @@
         .go-button:hover {
             background-color: #218838;
         }
-        .link-section {
-            border-top: 1px solid #eee;
-            padding-top: 20px;
-            margin-top: 10px;
+        .links-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px; /* Reduced spacing between buttons */
+            margin-top: 20px;
+        }
+        /* Ensure the grid layout remains on smaller screens */
+        @media (max-width: 768px) {
+            .container {
+                max-width: 95%;
+                padding: 15px;
+            }
+            .button {
+                padding: 14px 15px;
+                font-size: 14px;
+            }
+            .links-section {
+                gap: 6px; /* Even smaller gap on mobile */
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Extension Links</h1>
-        
         <!-- URL Input Form -->
         <div class="url-input-container">
             <input type="url" id="urlInput" class="url-input" placeholder="Enter URL..." autocomplete="off">
             <button id="goButton" class="go-button">Go</button>
         </div>
         
-        <div class="link-section">
-            <a href="chrome-extension://lfabpmegaafagjhmcejmkmfikhppgdeo/sidepanel.html" class="button">
+        <div class="links-section">
+            <!-- Left Column - Green Links (Placeholder) -->
+            <a href="#" class="button left-button">
+                <i class="fas fa-globe"></i> Site 1
+            </a>
+            <a href="chrome-extension://lfabpmegaafagjhmcejmkmfikhppgdeo/sidepanel.html" class="button right-button">
                 <i class="fas fa-search"></i> SideSearch
             </a>
-            <a href="chrome-extension://difoiogjjojoaoomphldepapgpbgkhkb/sidepanel.html" class="button">
+            <a href="#" class="button left-button">
+                <i class="fas fa-newspaper"></i> Site 2
+            </a>
+            <a href="chrome-extension://difoiogjjojoaoomphldepapgpbgkhkb/sidepanel.html" class="button right-button">
                 <i class="fas fa-puzzle-piece"></i> Sider
             </a>
-            <a href="chrome-extension://gldebcpkoojijledacjeboaehblhfbjg/sidepanel.html" class="button">
+            <a href="#" class="button left-button">
+                <i class="fas fa-book"></i> Site 3
+            </a>
+            <a href="chrome-extension://gldebcpkoojijledacjeboaehblhfbjg/sidepanel.html" class="button right-button">
                 <i class="fas fa-comments"></i> AskSteve
             </a>
-            <a href="chrome-extension://lilckelmopbcffmglfmfhelaajhjpcff/sidebar.html" class="button">
+            <a href="#" class="button left-button">
+                <i class="fas fa-video"></i> Site 4
+            </a>
+            <a href="chrome-extension://lilckelmopbcffmglfmfhelaajhjpcff/sidebar.html" class="button right-button">
                 <i class="fas fa-robot"></i> Anything Copilot
             </a>
-            <a href="chrome-extension://oiiajjjedfdfboacleknggbcbkjhngen/new-tab/index.html" class="button">
+            <a href="#" class="button left-button">
+                <i class="fas fa-music"></i> Site 5
+            </a>
+            <a href="chrome-extension://oiiajjjedfdfboacleknggbcbkjhngen/new-tab/index.html" class="button right-button">
                 <i class="fas fa-layer-group"></i> Multi Search
             </a>
         </div>
