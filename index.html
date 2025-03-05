@@ -167,7 +167,7 @@
             let url = document.getElementById('urlInput').value.trim();
             
             // Add https:// if no protocol is specified
-            if (url && !url.startsWith('http://') && !url.startsWith('https://')) {
+            if (url && !url.startsWith('chrome-extension://') && !url.startsWith('http://') && !url.startsWith('https://')) {
                 url = 'https://' + url;
             }
             
