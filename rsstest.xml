@@ -3,11 +3,10 @@
 <channel>
 <title>GitHub Elixir Daily Trending</title>
 <description>Daily Trending of Elixir in GitHub</description>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
 <link>http://mshibanami.github.io/GitHubTrendingRSS</link>
-<atom:link href="http://mshibanami.github.io/GitHubTrendingRSS/elixir.xml" rel="self" type="application/rss+xml"/>
 <language>en</language>
 <lastBuildDate>Wed, 19 Nov 2025 01:34:33 GMT</lastBuildDate>
+<atom:link href="http://mshibanami.github.io/GitHubTrendingRSS/elixir.xml" rel="self" type="application/rss+xml"/>
 
 <item>
 <title>elixir-lang/expert</title>
@@ -21,7 +20,7 @@
 <title>blockscout/blockscout</title>
 <link>https://github.com/blockscout/blockscout</link>
 <guid isPermaLink="true">https://github.com/blockscout/blockscout</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:32 GMT</pubDate>
 <description><![CDATA[<p>Blockchain explorer for Ethereum based network and a tool for inspecting and analyzing EVM based blockchains.</p>]]></description>
 </item>
 
@@ -29,7 +28,7 @@
 <title>ash-project/ash</title>
 <link>https://github.com/ash-project/ash</link>
 <guid isPermaLink="true">https://github.com/ash-project/ash</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:31 GMT</pubDate>
 <description><![CDATA[<p>A declarative, extensible framework for building Elixir applications.</p>]]></description>
 </item>
 
@@ -37,7 +36,7 @@
 <title>elixir-lang/elixir</title>
 <link>https://github.com/elixir-lang/elixir</link>
 <guid isPermaLink="true">https://github.com/elixir-lang/elixir</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:30 GMT</pubDate>
 <description><![CDATA[<p>Elixir is a dynamic, functional language for building scalable and maintainable applications</p>]]></description>
 </item>
 
@@ -45,7 +44,7 @@
 <title>supabase/realtime</title>
 <link>https://github.com/supabase/realtime</link>
 <guid isPermaLink="true">https://github.com/supabase/realtime</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:29 GMT</pubDate>
 <description><![CDATA[<p>Broadcast, Presence, and Postgres Changes via WebSockets</p>]]></description>
 </item>
 
@@ -53,7 +52,7 @@
 <title>bonfire-networks/bonfire-app</title>
 <link>https://github.com/bonfire-networks/bonfire-app</link>
 <guid isPermaLink="true">https://github.com/bonfire-networks/bonfire-app</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:28 GMT</pubDate>
 <description><![CDATA[<p>Bonfire - tend to your digital life in community. Customise and host your own online space and control your experience at the most granular level.</p>]]></description>
 </item>
 
@@ -61,7 +60,7 @@
 <title>firezone/firezone</title>
 <link>https://github.com/firezone/firezone</link>
 <guid isPermaLink="true">https://github.com/firezone/firezone</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:27 GMT</pubDate>
 <description><![CDATA[<p>Enterprise-ready zero-trust access platform built on WireGuard®.</p>]]></description>
 </item>
 
@@ -69,7 +68,7 @@
 <title>electric-sql/electric</title>
 <link>https://github.com/electric-sql/electric</link>
 <guid isPermaLink="true">https://github.com/electric-sql/electric</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:26 GMT</pubDate>
 <description><![CDATA[<p>Real-time sync for Postgres.</p>]]></description>
 </item>
 
@@ -77,7 +76,7 @@
 <title>elixir-ecto/ecto</title>
 <link>https://github.com/elixir-ecto/ecto</link>
 <guid isPermaLink="true">https://github.com/elixir-ecto/ecto</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:25 GMT</pubDate>
 <description><![CDATA[<p>A toolkit for data mapping and language integrated query.</p>]]></description>
 </item>
 
@@ -85,7 +84,7 @@
 <title>livebook-dev/livebook</title>
 <link>https://github.com/livebook-dev/livebook</link>
 <guid isPermaLink="true">https://github.com/livebook-dev/livebook</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:24 GMT</pubDate>
 <description><![CDATA[<p>Automate code &amp; data workflows with interactive Elixir notebooks</p>]]></description>
 </item>
 
@@ -93,7 +92,7 @@
 <title>phoenixframework/phoenix</title>
 <link>https://github.com/phoenixframework/phoenix</link>
 <guid isPermaLink="true">https://github.com/phoenixframework/phoenix</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:23 GMT</pubDate>
 <description><![CDATA[<p>Peace of mind from prototype to production</p>]]></description>
 </item>
 
@@ -101,7 +100,7 @@
 <title>phoenixframework/phoenix_live_view</title>
 <link>https://github.com/phoenixframework/phoenix_live_view</link>
 <guid isPermaLink="true">https://github.com/phoenixframework/phoenix_live_view</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:22 GMT</pubDate>
 <description><![CDATA[<p>Rich, real-time user experiences with server-rendered HTML</p>]]></description>
 </item>
 
@@ -109,7 +108,7 @@
 <title>OffchainLabs/blockscout</title>
 <link>https://github.com/OffchainLabs/blockscout</link>
 <guid isPermaLink="true">https://github.com/OffchainLabs/blockscout</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:21 GMT</pubDate>
 <description><![CDATA[<p></p>]]></description>
 </item>
 
@@ -117,7 +116,7 @@
 <title>algora-io/algora</title>
 <link>https://github.com/algora-io/algora</link>
 <guid isPermaLink="true">https://github.com/algora-io/algora</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:20 GMT</pubDate>
 <description><![CDATA[<p>Hire the top 1% OSS engineers</p>]]></description>
 </item>
 
@@ -125,7 +124,7 @@
 <title>plausible/analytics</title>
 <link>https://github.com/plausible/analytics</link>
 <guid isPermaLink="true">https://github.com/plausible/analytics</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:19 GMT</pubDate>
 <description><![CDATA[<p>Simple, open source, lightweight and privacy-friendly web analytics alternative to Google Analytics.</p>]]></description>
 </item>
 
@@ -133,7 +132,7 @@
 <title>duffelhq/paginator</title>
 <link>https://github.com/duffelhq/paginator</link>
 <guid isPermaLink="true">https://github.com/duffelhq/paginator</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:18 GMT</pubDate>
 <description><![CDATA[<p>Cursor-based pagination for Elixir Ecto</p>]]></description>
 </item>
 
@@ -141,7 +140,7 @@
 <title>teslamate-org/teslamate</title>
 <link>https://github.com/teslamate-org/teslamate</link>
 <guid isPermaLink="true">https://github.com/teslamate-org/teslamate</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:17 GMT</pubDate>
 <description><![CDATA[<p>A self-hosted data logger for your Tesla 🚘 [main maintainer=@JakobLichterfeld]</p>]]></description>
 </item>
 
@@ -149,7 +148,7 @@
 <title>access-company/antikythera</title>
 <link>https://github.com/access-company/antikythera</link>
 <guid isPermaLink="true">https://github.com/access-company/antikythera</guid>
-<pubDate>Wed, 19 Nov 2025 01:34:33 GMT</pubDate>
+<pubDate>Wed, 19 Nov 2025 01:34:16 GMT</pubDate>
 <description><![CDATA[<p>Elixir framework to build your own in-house PaaS</p>]]></description>
 </item>
 
